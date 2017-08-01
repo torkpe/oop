@@ -5,9 +5,13 @@ class Student{
     
   }
   getStudent(){
-    return `Student's name:${this.name} 
+    if(typeof(this.level)==="number"){
+      return `Student's name:${this.name} 
             Student's level:${this.level}
             `
+    }else{
+      return "Level should be of number type"
+    }
   }
 }
 class GradeStudent extends Student{
@@ -45,7 +49,6 @@ class GradeStudent extends Student{
     }
   }
 }
-// const Jer=new Student("Tope",1)
-// Jer.getStudent()
-const foo=new GradeStudent("Jane",1,3)
-foo.getGrade()
+module.exports={
+  Student, GradeStudent
+}
