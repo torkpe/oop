@@ -11,5 +11,4 @@ describe("Get student info", function() {
 			assert.equal(checkError.getStudent(), "Level should be of number type");
 		});
 	});
-
 })
