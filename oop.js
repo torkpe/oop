@@ -6,7 +6,7 @@ class Student{
   }
   getStudent(){
     //checking for invalid inputs by reducing if statements
-    let newName=this.name.trim()
+    let newName=this.name.trim()//remove whitespace from beginning of string
     if((this.level && newName)&&(typeof(this.level)==="number")&&(typeof(newName)==="string")){
       return `Student's name:${this.name} 
             Student's level:${this.level}
@@ -19,12 +19,12 @@ class Student{
 class GradeStudent extends Student{
   constructor(name,level,score){
     super(name,level);
-    this.grade=score
+    this.score=score
   }
   getGrade(){
     //checking for invalid inputs
-    let newName=this.name.trim()
-    if((this.level && newName)&&(typeof(this.level)==="number")&&(typeof(newName)==="string")&&(typeof(this.score)==="number")){
+    let newName=this.name.trim() //remove white space from beinning of string
+    if((this.level && newName &&this.score)&&(typeof(this.level)==="number")&&(typeof(newName)==="string")&&(typeof(this.score)==="number")){
       if(this.grade<45){
         return( 
         ` ${this.name} cannot be promoted to the next level
@@ -53,7 +53,7 @@ class GradeStudent extends Student{
         `)
       }
     }else{
-      return "`Level` `name` or `score` should be of `number` `string` or `number` type"
+      return "`Level` `name` or `score` should be of `number` `string` or `number` type and should not be empty"
     }
   }
 }
