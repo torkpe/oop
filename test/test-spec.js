@@ -1,41 +1,22 @@
 const chai = require("chai");
 const assert=chai.assert;
-const student= require("../oop.js")
 const gradeStudent= require("../oop.js")
 
-let checkError=new student.Student(" ", "2")
-let checkError2=new gradeStudent.GradeStudent("doe", 1, " ")
-let studentDetail=new student.Student("jane",1)
-let studentGrade=new gradeStudent.GradeStudent("doe", 1,79)
-// check if getStudent function accepts an invalid input
-describe("Invalid input(s):", function() {
-	describe("You have made an invalid input in getStudent function;", () => {
-		it("should return `Level` or `name` should be of `number` or `string` type and should not be empty", () => {
-			assert.equal(checkError.getStudent(), "`Level` or `name` should be of `number` or `string` type and should not be empty");
-		});
-	});
-})
-//check if the getGrade function accepts an invalid input
-describe("Invalid input(s):", function() {
-	describe("You have made an invalid input in gradeStudent function;", () => {
-		it("should return `Level` `name` or `score` should be of `number` `string` or `number` type and should not be empty", () => {
-			assert.equal(checkError2.getGrade(), "`Level` `name` or `score` should be of `number` `string` or `number` type and should not be empty");
-		});
-	});
-})
+let studentGrade=new gradeStudent.GradeStudent("doe", 1,59)
+let studentDetail=new gradeStudent.GradeStudent("doe", 1,59)
 //expect student's details
-describe("Student's details:", function() {
-	describe("Return the details of the student", () => {
-		it("should return the name and level of student", () => {
-			assert.equal(studentDetail.getStudent(), `Student's name:jane\nStudent's level:1`);
+describe("Student's details:", () => {
+	describe("If valid,", () => {
+		it("should return details of student", () => {
+			assert.equal(studentDetail.getDetails(),`doe is a level 1 student`);
 		});
 	});
 })
 //expect student's grade details
 describe("Student's grade details:", function() {
-	describe("Return grade details of the student;", () => {
+	describe("if valid,", () => {
 		it("should return the details of student's performance", () => {
-			assert.equal(studentGrade.getGrade(), `doe is double Promoted\nReason:doe's Score exceeds expected Performance\nAdvice:doe can do better if challenged\nScore:79\nNew Level:${1+2}`);
+			assert.equal(studentGrade.getGrade(), `doe is above average performance`);
 		});
 	});
 })
