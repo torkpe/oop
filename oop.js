@@ -8,9 +8,7 @@ class Student{
     //checking for invalid inputs by reducing if statements
     let newName=this.name.trim()//remove whitespace from beginning of string
     if((this.level && newName)&&(typeof(this.level)==="number")&&(typeof(newName)==="string")){
-      return `Student's name:${this.name} 
-            Student's level:${this.level}
-            `
+      return `Student's name:${this.name}\nStudent's level:${this.level}`
     }else{
       return "`Level` or `name` should be of `number` or `string` type and should not be empty"
     }

@@ -26,9 +26,7 @@ describe("Invalid input(s)", function() {
 describe("Student's details", function() {
 	describe("Return the details of the student", () => {
 		it("should return the name and level of student", () => {
-			assert.equal(checkError.studentDetail(), `Student's name:${this.name} 
-            										Student's level:${this.level}
-            										`);
+			assert.equal(studentDetail.getStudent(), `Student's name:jane\nStudent's level:1`);
 		});
 	});
 })
