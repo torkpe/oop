@@ -30,3 +30,11 @@ describe("Student's details", function() {
 		});
 	});
 })
+//expect student's grade details
+describe("Student's grade details", function() {
+	describe("Return the gr details of the student", () => {
+		it("should return the name and level of student", () => {
+			assert.equal(studentDetail.getStudent(), `Student's name:jane\nStudent's level:1`);
+		});
+	});
+})
